@@ -98,9 +98,21 @@
         <div class="section-heading">
           <p class="eyebrow">THOUGHTFULLY CRAFTED, PURPOSEFULLY DESIGNED</p>
           <h2 id="projects-heading">My Projects<span class="accent-dot">.</span></h2>
-          <p>A selection of projects exploring user experience, interaction design,<br class="desktop-break"> and thoughtful web development.</p>
+          <p>A selection of projects exploring user experience, interaction design, visual storytelling,<br class="desktop-break"> and thoughtful web development.</p>
         </div>
         <div class="projects-grid">
+          <article class="project-card">
+            <button class="project-visual" type="button" data-project="tshirt" aria-label="Explore the T-Shirt Design Collection project">
+              <img src="assets/tshirt-mockup.jpg" alt="Five original t-shirt designs: Booked Till Eternity, Will of Fire, My Love Was My Curse, Soft of Obito, and Heroes Can Become Villains" width="1200" height="788" loading="lazy">
+              <span class="project-visual-arrow"><svg class="icon"><use href="#icon-arrow-up-right"/></svg></span>
+            </button>
+            <div class="project-content">
+              <span class="project-category category-apparel">T-Shirt & Apparel Design</span>
+              <h3>T-Shirt Design Collection</h3>
+              <p>An original collection designed and sold on Redbubble. Explored anime, literature, and dark-aesthetic themes, then prepared print-ready artwork—36 sales and counting.</p>
+              <div class="project-bottom"><button class="project-link" type="button" data-project="tshirt">View project <svg class="icon"><use href="#icon-arrow"/></svg></button><span class="project-number">01</span></div>
+            </div>
+          </article>
           <article class="project-card">
             <button class="project-visual" type="button" data-project="ecotech" aria-label="Explore the EcoTech Ltd project">
               <img src="assets/ecotech.png" alt="EcoTech sustainability website shown on a laptop and mobile phone" width="241" height="147" loading="lazy">
@@ -110,7 +122,7 @@
               <span class="project-category">UX/UI Design</span>
               <h3>EcoTech Ltd</h3>
               <p>Designed advanced interactions for a sustainability platform, focusing on user flows, accessibility, and WCAG compliance. Built using Webflow.</p>
-              <div class="project-bottom"><button class="project-link" type="button" data-project="ecotech">View project <svg class="icon"><use href="#icon-arrow"/></svg></button><span class="project-number">01</span></div>
+              <div class="project-bottom"><button class="project-link" type="button" data-project="ecotech">View project <svg class="icon"><use href="#icon-arrow"/></svg></button><span class="project-number">02</span></div>
             </div>
           </article>
           <article class="project-card">
@@ -122,7 +134,7 @@
               <span class="project-category">UX/UI Design</span>
               <h3>Morar</h3>
               <p>A financial literacy app that helps people build better money habits. Designed user flows, wireframes, and high-fidelity screens with a clean, simple interface.</p>
-              <div class="project-bottom"><button class="project-link" type="button" data-project="morar">View project <svg class="icon"><use href="#icon-arrow"/></svg></button><span class="project-number">02</span></div>
+              <div class="project-bottom"><button class="project-link" type="button" data-project="morar">View project <svg class="icon"><use href="#icon-arrow"/></svg></button><span class="project-number">03</span></div>
             </div>
           </article>
           <article class="project-card">
@@ -134,7 +146,7 @@
               <span class="project-category category-development">Web Development</span>
               <h3>Book Shop</h3>
               <p>A responsive e-commerce website built with Bootstrap, PHP, and MySQL. Includes registration, a shopping cart, and an admin panel for books and orders.</p>
-              <div class="project-bottom"><button class="project-link" type="button" data-project="bookshop">View project <svg class="icon"><use href="#icon-arrow"/></svg></button><span class="project-number">03</span></div>
+              <div class="project-bottom"><button class="project-link" type="button" data-project="bookshop">View project <svg class="icon"><use href="#icon-arrow"/></svg></button><span class="project-number">04</span></div>
             </div>
           </article>
         </div>
@@ -218,7 +230,7 @@
     <button class="dialog-close" id="dialog-close" type="button" aria-label="Close project details"><svg class="icon"><use href="#icon-close"/></svg></button>
     <div class="dialog-layout">
       <div class="dialog-visual"><p class="eyebrow">A CLOSER LOOK</p><img id="dialog-image" src="assets/ecotech.png" alt="" width="482" height="294"><p class="dialog-image-caption">Designed for a seamless experience,<br>on every screen.</p></div>
-      <div class="dialog-body"><span class="project-category" id="dialog-category"></span><h2 id="dialog-title"></h2><p class="dialog-overview" id="dialog-overview"></p><div class="dialog-meta"><div><span>MY ROLE</span><p id="dialog-role"></p></div><div><span>TOOLS</span><p id="dialog-tools"></p></div></div><h3>The challenge</h3><p id="dialog-challenge"></p><h3>The approach</h3><p id="dialog-approach"></p><div class="dialog-tags" id="dialog-tags"></div><a class="button button-primary dialog-contact" href="#contact">Discuss a similar project <svg class="icon"><use href="#icon-arrow"/></svg></a></div>
+      <div class="dialog-body"><span class="project-category" id="dialog-category"></span><h2 id="dialog-title"></h2><p class="dialog-overview" id="dialog-overview"></p><div class="dialog-meta"><div><span>MY ROLE</span><p id="dialog-role"></p></div><div><span>TOOLS</span><p id="dialog-tools"></p></div></div><h3>The challenge</h3><p id="dialog-challenge"></p><h3>The approach</h3><p id="dialog-approach"></p><div class="dialog-tags" id="dialog-tags"></div><ul class="dialog-stats" id="dialog-stats" hidden></ul><a class="button button-primary dialog-contact" href="#contact">Discuss a similar project <svg class="icon"><use href="#icon-arrow"/></svg></a></div>
     </div>
   </dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon"><use href="#icon-check"/></svg><span id="toast-text"></span></div>
