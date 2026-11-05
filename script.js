@@ -73,10 +73,30 @@
   }
 
   const projects = {
+    tshirt: {
+      caption: 'From my desk,<br>to wardrobes worldwide.',
+      title: 'T-Shirt Design Collection',
+      category: 'Passion Project · Hobby',
+      image: 'assets/tshirt-hero.jpg',
+      imageAlt: 'Black t-shirt printed with a skeleton reading a book under candlelight and the line "just one more chapter"',
+      overview: 'A personal hobby project: a growing collection of original t-shirt designs sold on Redbubble. It began as a way to keep drawing outside of client work and turned into a small print-on-demand collection reaching customers around the world.',
+      role: 'T-Shirt Designer — a side passion, not client work. I concept, illustrate, typeset and prepare every design myself, then publish and manage the listings.',
+      tools: 'Adobe Photoshop · Illustrator · Figma',
+      challenge: 'Making artwork that works on a real product: it has to stay legible across shirt colours and sizes, say something at a glance, and stand out in a crowded marketplace — all while staying fun to make.',
+      approach: 'Idea and theme exploration (anime, quotes, literature, minimal, culture), quick concept sketches, then digital illustration and typography in Photoshop and Illustrator. Each design is refined, exported at high resolution and published print-ready on Redbubble.',
+      tags: ['Personal project', 'Illustration', 'Typography', 'Print-on-demand'],
+      stats: [
+        ['36', 'Total sales'],
+        ['20%', 'Configured markup'],
+        ['£44.85', 'Total price'],
+        ['£7.48', 'Margin per sale']
+      ]
+    },
     ecotech: {
+      caption: 'Designed for a seamless experience,<br>on every screen.',
       title: 'EcoTech Ltd',
       category: 'UX/UI Design',
-      image: 'assets/ecotech.png',
+      image: 'assets/ecotech.jpg',
       imageAlt: 'EcoTech sustainability website displayed on desktop and mobile',
       overview: 'A sustainability platform that makes exploring greener choices feel clear, engaging, and accessible.',
       role: 'UX research & UI design',
@@ -86,9 +106,10 @@
       tags: ['User flows', 'Accessibility', 'Responsive design', 'Interaction design']
     },
     morar: {
+      caption: 'Calm, clear screens<br>that build better money habits.',
       title: 'Morar',
       category: 'UX/UI Design',
-      image: 'assets/morar.png',
+      image: 'assets/morar.jpg',
       imageAlt: 'Morar financial literacy platform displayed on desktop and mobile',
       overview: 'A friendly financial literacy app designed to help people learn, plan, and build better money habits.',
       role: 'End-to-end UX & UI design',
@@ -98,9 +119,10 @@
       tags: ['User journeys', 'Wireframing', 'Mobile app design', 'Prototyping']
     },
     bookshop: {
+      caption: 'Browsing, buying and managing<br>in one place.',
       title: 'Book Shop',
       category: 'Web Development',
-      image: 'assets/bookshop.png',
+      image: 'assets/bookshop.jpg',
       imageAlt: 'Book Shop online bookstore displayed on desktop and mobile',
       overview: 'A responsive e-commerce website that brings book discovery, shopping, and store management together.',
       role: 'Web design & development',
@@ -126,6 +148,8 @@
     document.getElementById('dialog-tools').textContent = project.tools;
     document.getElementById('dialog-challenge').textContent = project.challenge;
     document.getElementById('dialog-approach').textContent = project.approach;
+    const caption = document.getElementById('dialog-caption');
+    if (project.caption) caption.innerHTML = project.caption;
     dialogImage.src = project.image;
     dialogImage.alt = project.imageAlt;
     const tags = document.getElementById('dialog-tags');
@@ -134,6 +158,49 @@
       tag.textContent = text;
       return tag;
     }));
+    const designsBox = document.getElementById('dialog-designs');
+    const designGrid = document.getElementById('design-grid');
+    if (project.designs) {
+      designGrid.replaceChildren(...project.designs.map(({ name, meta, image }) => {
+        const li = document.createElement('li');
+        const figure = document.createElement('figure');
+        const img = document.createElement('img');
+        const caption = document.createElement('figcaption');
+        const strong = document.createElement('strong');
+        const span = document.createElement('span');
+        img.src = image;
+        img.alt = `T-shirt design: ${name}`;
+        img.loading = 'lazy';
+        img.width = 460;
+        img.height = 455;
+        strong.textContent = name;
+        span.textContent = meta;
+        caption.append(strong, span);
+        figure.append(img, caption);
+        li.append(figure);
+        return li;
+      }));
+      designsBox.hidden = false;
+    } else {
+      designGrid.replaceChildren();
+      designsBox.hidden = true;
+    }
+    const stats = document.getElementById('dialog-stats');
+    if (project.stats) {
+      stats.replaceChildren(...project.stats.map(([value,label]) => {
+        const item = document.createElement('li');
+        const strong = document.createElement('strong');
+        const span = document.createElement('span');
+        strong.textContent = value;
+        span.textContent = label;
+        item.append(strong, span);
+        return item;
+      }));
+      stats.hidden = false;
+    } else {
+      stats.replaceChildren();
+      stats.hidden = true;
+    }
     document.body.classList.add('dialog-is-open');
     dialog.showModal();
     dialog.scrollTop = 0;
