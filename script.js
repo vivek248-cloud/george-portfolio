@@ -88,8 +88,8 @@
       stats: [
         ['36', 'Total sales'],
         ['20%', 'Configured markup'],
-        ['£44.85', 'Total price'],
-        ['£7.48', 'Margin per sale']
+        ['£1,614.60', 'Total price'],
+        ['£269.28', 'Margin per sale']
       ]
     },
     ecotech: {
